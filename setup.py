@@ -1,9 +1,9 @@
 from setuptools import find_packages
 from setuptools import setup
 
-setup(name='dnn_models',
+setup(name='dnnmodels',
       version='1.0.0',
-      url='https://github.com/NullConvergence/dnn-models',
+      url='https://github.com/NullConvergence/dnnmodels',
       license='MIT',
       author='NullConvergence',
       install_requires=[
