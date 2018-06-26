@@ -21,7 +21,6 @@ class MaxPool(Layer):
         """
         This method initializes all layer variables
         """
-        # store each element of input_shape in different variables
         self.input_shape = input_shape
         self.set_output_shape(input_shape)
 

@@ -17,19 +17,6 @@ class ReLU(Layer):
         self.__dict__.update(locals())
         del self.self
 
-    def set_input_shape(self, input_shape):
-        """
-        This method initializes all layer variables
-        """
-        self.input_shape = input_shape
-        self.set_output_shape(input_shape)
-
-    def set_output_shape(self, output_shape):
-        """
-        Just sets the output shape
-        """
-        self.output_shape = output_shape
-
     def fprop(self, input):
         """
         Implements forward propagation as required by CleverHans Model Interface

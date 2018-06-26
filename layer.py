@@ -11,3 +11,10 @@ class Layer(object):
 
     def get_output_shape(self):
         return self.output_shape
+
+    def set_input_shape(self, shape):
+        self.input_shape = shape
+        self.set_output_shape(shape)
+
+    def set_output_shape(self, shape):
+        self.output_shape = shape
