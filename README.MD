@@ -3,13 +3,16 @@ The main goal is to ease the design process for new models by introducing the ``
 
 The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans/blob/master/cleverhans_tutorials/tutorial_models.py). For the moment all models are extended to use [name_scopes](https://www.tensorflow.org/api_docs/python/tf/name_scope). Moreover, new architectures will be implemented in the [``` get_model.py ```](https://github.com/NullConvergence/dnn-models/blob/master/get_model.py) file.
 
-### Usage
+### Installation
 
-* Clone project: ``` git clone https://github.com/NullConvergence/dnn-models ```
-* Import prefered dnn from *(``` get_model.py ```)[https://github.com/NullConvergence/dnn-models/blob/master/lib/get_model.py]: e.g.  ``` from lib.get_models import basic_cnn ```
-* Import trainer from [``` train_graph.py ```](https://github.com/NullConvergence/dnn-models/blob/master/lib/train_graph.py): e.g.  ``` from lib.train_graph import Trainer ```
-* Instantiate Model: e.g. ``` my_model = basic_cnn() ``` 
-* Instantiate Trainer: e.g. ``` trainer = Trainer() ``` 
+## ``` pip ``` Installation: 
+
+``` pip install -e git+https://github.com/NullConvergence/dnn-models#egg=dnn-models ```
+
+## Manual Installation
+
+``` git clone https://github.com/NullConvergence/dnn-models ```
+``` pip install -e ./dnn-models ```
 
 
 ### Examples
