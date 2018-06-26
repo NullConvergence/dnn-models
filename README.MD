@@ -7,7 +7,7 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 ## ``` pip ``` Installation: 
 
-``` pip install -e git+https://github.com/NullConvergence/dnn-models#egg=dnn-models ```
+``` pip install pip install dnnmodels ```
 
 ## Manual Installation
 
