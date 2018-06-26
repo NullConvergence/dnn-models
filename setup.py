@@ -4,9 +4,9 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='dnnmodels',
-      version='1.0.0',
+      version='1.0.1',
       url='https://github.com/NullConvergence/dnnmodels',
-      download_url='https://github.com/NullConvergence/dnnmodels/archive/1.0.0.tar.gz',
+      download_url='https://github.com/NullConvergence/dnnmodels/archive/1.0.1.tar.gz',
       license='MIT',
       author='NullConvergence',
       author_email='nullconvergence@anonymous.ne',
