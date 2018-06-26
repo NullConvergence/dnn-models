@@ -42,6 +42,10 @@ def basic_cnn(nb_filters=64, nb_classes=10, input_shape=(None, 28, 28, 1)):
 def alexnet(nb_filters=64, nb_classes=1000, input_shape=[None, 227, 227, 3]):
     """
     Model for AlexNet ImageNet
+    - Alex Krizhevsky, Ilya Sutskever & Geoffrey E. Hinton.
+    ImageNet Classification with Deep Convolutional Neural Networks. NIPS, 2012.
+    Link:
+    - https://papers.nips.cc/paper/4824-imagenet-classification-with-deep-convolutional-neural-networks
     """
     layers = [
         Conv2D(kernel_shape=(11, 11), strides=(4, 4), 'SAME', nr_filters=nb_filters, name='conv_1'),
