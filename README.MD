@@ -5,11 +5,11 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 ### Installation
 
-## ``` pip ``` Installation: 
+#### ``` pip ``` Installation: 
 
 ``` pip install pip install dnnmodels ```
 
-## Manual Installation
+#### Manual Installation
 
 ``` git clone https://github.com/NullConvergence/dnn-models ```
 ``` pip install -e ./dnn-models ```
