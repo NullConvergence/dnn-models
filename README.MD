@@ -13,8 +13,9 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 #### Manual Installation
 
-``` git clone https://github.com/NullConvergence/dnn-models ```
-``` pip install -e ./dnn-models ```
+``` git clone https://github.com/NullConvergence/dnnmodels ```
+
+``` pip install -e ./dnnmodels ```
 
 
 ### Examples
