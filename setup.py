@@ -1,4 +1,3 @@
-from setuptools import find_packages
 from setuptools import setup
 
 setup(name='dnnmodels',
@@ -10,4 +9,4 @@ setup(name='dnnmodels',
           'cleverhans',
           'tensorflow'
       ],
-      packages=find_packages())
+      packages=['deepmodels'])
