@@ -11,7 +11,7 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 ``` pip install pip install dnnmodels ```
 
-#### Manual Installation
+#### Manual Installation:
 
 ``` git clone https://github.com/NullConvergence/dnnmodels ```
 
