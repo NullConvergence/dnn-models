@@ -22,7 +22,13 @@ class ReLU(Layer):
         Implements forward propagation as required by CleverHans Model Interface
         """
         with tf.name_scope(self.name):
-            return tf.nn.relu(input)
+            return tf.nn.relu(input, name='relu')
+
+    def reng(self):
+        """
+        Implements reverse engineering of layer - in this case relu
+        """
+        pass
 
     def get_params(self):
         """

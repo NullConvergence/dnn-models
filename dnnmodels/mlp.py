@@ -15,6 +15,9 @@ class MLP(Model):
     """
 
     def __init__(self, layers, input_shape):
+        """
+        Initializes layers & layer names
+        """
         super(MLP, self).__init__()
 
         self.layer_names = []
@@ -37,6 +40,9 @@ class MLP(Model):
             input_shape = layer.get_output_shape()
 
     def fprop(self, x, set_ref=False):
+        """
+        Implements inference as forward propagation for each layer
+        """
         states = []
         for layer in self.layers:
             if set_ref:
@@ -47,7 +53,26 @@ class MLP(Model):
         states = dict(zip(self.get_layer_names(), states))
         return states
 
+            def reng(self, ]x):
+        """
+        Reverse engineers all layers (if possible) and returns a dic
+        TODO: Think about moving this to Model in a cleverhans fork
+        """
+        try:
+            states = []
+            for layer in self.layers:
+                x = layer.reng(x)
+                states.append(x)
+            states = dict(zip(self.get_layer_names(), states))
+            return states
+        except Exception as e:
+            # TODO: log this
+            raise e
+
     def get_params(self):
+        """
+        Returns all parameters from all layers
+        """
         out = []
         for layer in self.layers:
             for param in layer.get_params():
