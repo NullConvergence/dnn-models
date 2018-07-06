@@ -32,7 +32,7 @@ class Trainer():
 
     def train(self, save=False):
         """
-        Wrapper around cleverhans model_train with pre-setup
+        Wrapper around cleverhans utils model_train with pre-setup
         """
 
         model = self.inference
@@ -52,7 +52,7 @@ class Trainer():
 
     def evaluate(self):
         """
-        Wrapper aroud cleverhans model_eval
+        Wrapper aroud cleverhans utils model_eval
         """
         eval_params = {'batch_size': self.train_params['batch_size']}
         acc = model_eval(
@@ -62,6 +62,6 @@ class Trainer():
 
     def restore(self, path):
         """
-        Wrapper around cleverhans tf.model_load
+        Wrapper around cleverhans utils tf.model_load
         """
         return tf_model_load(self.session, path)
