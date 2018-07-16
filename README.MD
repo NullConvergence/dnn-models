@@ -9,7 +9,7 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 #### ``` pip ``` Installation: 
 
-``` pip install pip install dnnmodels ```
+``` pip install dnnmodels ```
 
 #### Manual Installation:
 
