@@ -8,7 +8,8 @@ import tensorflow as tf
 from dnnmodels.primitives.layers import *
 
 class Alexnet(object):
-    def __init__():
+    # TODO: Add input_shape
+    def __init__(nb_filters=64, nb_classes=1000, input_shape=(None, None, None, None)):
         """
         Model for AlexNet ImageNet
         - Alex Krizhevsky, Ilya Sutskever & Geoffrey E. Hinton.

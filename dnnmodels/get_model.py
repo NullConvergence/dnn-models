@@ -6,20 +6,7 @@ from __future__ import unicode_literals
 import tensorflow as tf
 
 from .primitives.layers import *
-
-# from dnnmodels.primitives.layers import *
-# TODO: find a better way for this
-# from .primitives.layers import *
-# from .conv2d import Conv2D
-# from .flatten import Flatten
-# from .fully_connected import FullyConnected
-# from .layer import Layer
-# from .lrn import LocalResponseNormalization
-# from .max_pool import MaxPool
-# from .relu import ReLU
-# from .softmax import Softmax
-# from .mlp import MLP
-
+from .architectures import *
 
 def basic_cnn(nb_filters=64, nb_classes=10, input_shape=(None, 28, 28, 1)):
     """
@@ -40,3 +27,11 @@ def basic_cnn(nb_filters=64, nb_classes=10, input_shape=(None, 28, 28, 1)):
     model = MLP(layers, input_shape)
 
     return model
+
+def alex_net(nb_filters=64, nb_classes=1000, input_shape=(None, None, None, None)):
+        """
+            Instantiate Alexnet model and return it
+        """
+        model = Alexnet(nb_filters=nb_filters, nb_classes=nb_classes, input_shape=input_shape)
+        return model
+        
