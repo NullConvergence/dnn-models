@@ -7,9 +7,9 @@ import tensorflow as tf
 from .layer import Layer
 
 
-class LocalResponseNormalization(Layer):
+class Dropout(Layer):
 
-    def __init__(self, alpha=1e-4, beta=0.75, depth_radius=2, bias=2.0, name='lrn'):
+    def __init__(self, name='dropout', keep_prob=0.5):
         """
         All parameters are processed by __dict__.update(locals())
         Unfortunately the method also processes 'self' so it is removed
@@ -17,19 +17,28 @@ class LocalResponseNormalization(Layer):
         self.__dict__.update(locals())
         del self.self
 
+    def set_input_shape(self, input_shape):
+        """
+        This method initializes all layer variables
+        """
+        self.input_shape = input_shape
+        self.set_output_shape(input_shape)
+
+    def set_output_shape(self, shape):
+        """
+        Just sets the output shape
+        """
+        self.output_shape = shape
+
     def fprop(self, input):
         """
         Implements forward propagation as required by CleverHans Model Interface
         """
         with tf.name_scope(self.name):
-            return tf.nn.local_response_normalization(input,
-                                                      alpha=self.alpha,
-                                                      beta=self.beta,
-                                                      depth_radius=self.depth_radius,
-                                                      bias=self.bias)
+            return tf.nn.dropout(input, keep_prob=self.keep_prob)
 
     def get_params(self):
         """
         Implements get_params as required by CleverHans Model Interface
         """
-        return [self.alpha, self.beta, self.depth_radius, self.bias]
+        return []
