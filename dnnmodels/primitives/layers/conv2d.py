@@ -64,12 +64,29 @@ class Conv2D (Layer):
         """
         with tf.name_scope(self.name):
             conv_out = tf.nn.conv2d(
-                input, self.kernel, strides=(1,) + tuple(self.strides) + (1,),
-                padding=self.padding)
+                input,
+                self.kernel,
+                strides=(1,) + tuple(self.strides) + (1,),
+                padding=self.padding,
+                name='conv')
             # add bias
-            bias = tf.nn.bias_add(conv_out, self.b)
+            bias = tf.nn.bias_add(conv_out, self.b, name='bias_add')
             # return
             return bias
+
+    def reng(self, x):
+        """
+        Implements reverse engineering of layer - in this case deconvolution
+        """
+        _name = 'de-' + self.name
+        with tf.name_scope(_name):
+            return tf.nn.conv2d_transpose(value=x,
+                                          filter=self.kernel,
+                                          output_shape=self.input_shape,
+                                          strides=(1,) +
+                                          tuple(self.strides) + (1,),
+                                          padding=self.padding,
+                                          )
 
     def get_params(self):
         """

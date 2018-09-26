@@ -1,3 +1,5 @@
+[![BCH compliance](https://bettercodehub.com/edge/badge/NullConvergence/dnnmodels?branch=master)](https://bettercodehub.com/)
+
 The library was created in order to extend [Cleverhans](https://github.com/tensorflow/cleverhans) [models](https://github.com/tensorflow/cleverhans/blob/master/cleverhans/model.py).
 The main goal is to ease the design process for new models by introducing the ``` train_graph.py ``` abstraction and other layers such as ``` lrn.py ```.
 
@@ -5,14 +7,15 @@ The inspiration comes from [Cleverhans](https://github.com/tensorflow/cleverhans
 
 ### Installation
 
-## ``` pip ``` Installation: 
+#### ``` pip ``` Installation: 
 
-``` pip install pip install dnnmodels ```
+``` pip install dnnmodels ```
 
-## Manual Installation
+#### Manual Installation:
 
-``` git clone https://github.com/NullConvergence/dnn-models ```
-``` pip install -e ./dnn-models ```
+``` git clone https://github.com/NullConvergence/dnnmodels ```
+
+``` pip install -e ./dnnmodels ```
 
 
 ### Examples
