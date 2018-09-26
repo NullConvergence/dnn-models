@@ -5,16 +5,20 @@ from __future__ import unicode_literals
 
 import tensorflow as tf
 
+from .primitives.layers import *
+
+# from dnnmodels.primitives.layers import *
 # TODO: find a better way for this
-from .conv2d import Conv2D
-from .flatten import Flatten
-from .fully_connected import FullyConnected
-from .layer import Layer
-from .lrn import LocalResponseNormalization
-from .max_pool import MaxPool
-from .relu import ReLU
-from .softmax import Softmax
-from .mlp import MLP
+# from .primitives.layers import *
+# from .conv2d import Conv2D
+# from .flatten import Flatten
+# from .fully_connected import FullyConnected
+# from .layer import Layer
+# from .lrn import LocalResponseNormalization
+# from .max_pool import MaxPool
+# from .relu import ReLU
+# from .softmax import Softmax
+# from .mlp import MLP
 
 
 def basic_cnn(nb_filters=64, nb_classes=10, input_shape=(None, 28, 28, 1)):
