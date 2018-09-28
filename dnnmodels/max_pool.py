@@ -55,6 +55,7 @@ class MaxPool(Layer):
                                       padding=self.padding,
                                       name='max_pool')
             else:
+                # TODO: Save indices somewhere
                 return tf.nn.max_pool_with_argmax(input,
                                                   ksize=(
                                                       1,) + tuple(self.ksize) + (1,),
@@ -93,10 +94,13 @@ class MaxPool(Layer):
             for i in range(dim, 0, -1):
                 out = tf.concat([out, tf.zeros_like(out)], i)
             out_size = [-1] + [s * 2 for s in sh[1:-1]] + [sh[-1]]
-            out = tf.reshape(out, out_size, name='unpool')
+            out = tf.reshape(out, out_size, name='de-pool')
         return out
 
     def _unpool2d_argmax(self, pool, ind):
+        """
+
+        """
         stride = (1,) + tuple(self.strides) + (1,)
         with tf.variable_scope(self.name):
             ind_shape = tf.shape(ind)
@@ -122,7 +126,7 @@ class MaxPool(Layer):
 
             ret = tf.scatter_nd(ind_, pool_, shape=tf.cast(
                 flat_output_shape, tf.int64))
-            ret = tf.reshape(ret, output_shape)
+            ret = tf.reshape(ret, output_shape, name='de-pool')
 
             set_input_shape = pool.get_shape()
             set_output_shape = [set_input_shape[0],
@@ -130,4 +134,4 @@ class MaxPool(Layer):
                                 set_input_shape[2] * stride[2],
                                 set_input_shape[3]]
             ret.set_shape(set_output_shape)
-        return ret
+            return ret

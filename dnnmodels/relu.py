@@ -24,11 +24,12 @@ class ReLU(Layer):
         with tf.name_scope(self.name):
             return tf.nn.relu(input, name='relu')
 
-    def reng(self):
+    def reng(self, input):
         """
         Implements reverse engineering of layer - in this case relu
         """
-        pass
+        with tf.name_scope(self.name):
+            return tf.nn.relu(input, name='de-relu')
 
     def get_params(self):
         """

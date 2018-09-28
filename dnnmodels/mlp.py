@@ -53,7 +53,7 @@ class MLP(Model):
         states = dict(zip(self.get_layer_names(), states))
         return states
 
-            def reng(self, ]x):
+    def reng(self, ]x):
         """
         Reverse engineers all layers (if possible) and returns a dic
         TODO: Think about moving this to Model in a cleverhans fork

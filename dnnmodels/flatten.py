@@ -39,7 +39,14 @@ class Flatten(Layer):
         Implements forward propagation as required by CleverHans Model Interface
         """
         with tf.name_scope(self.name):
-            return tf.reshape(input, [-1, self.output_width])
+            return tf.reshape(input, [-1, self.output_width], name='flatten')
+
+    def reng(self, input):
+        """
+
+        """
+        with tf.name_scope(self.name):
+            return tf.reshape(input, self.input_shape, name='de-flatten')
 
     def get_params(self):
         """

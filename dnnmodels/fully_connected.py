@@ -32,8 +32,9 @@ class FullyConnected(Layer):
                                                                      keepdims=True))
             bias_init = tf.constant_initializer(value=0)
             # define weight and bias
-            self.W = tf.Variable(weight_init)
-            self.b = tf.Variable(np.zeros((self.nr_hidden,)).astype('float32'))
+            self.W = tf.Variable(weight_init, name='weight')
+            self.b = tf.Variable(
+                np.zeros((self.nr_hidden,)).astype('float32'), name='bias')
             # set input shape
             self.input_shape = [batch_size, dim]
             # set output shape
@@ -51,6 +52,14 @@ class FullyConnected(Layer):
         """
         with tf.name_scope(self.name):
             return tf.matmul(input, self.W) + self.b
+
+    def reng(self, input):
+        """
+        Reverse engineer fully connected layer using the following formula:
+        Wx + b = input -> x = (input - b)*W-1
+        """
+        with tf.name_scope(self.name):
+            return tf.matmul((input - b), tf.matrix_inverse(self.W))
 
     def get_params(self):
         """

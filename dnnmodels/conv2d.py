@@ -78,7 +78,6 @@ class Conv2D (Layer):
         """
         Implements reverse engineering of layer - in this case deconvolution
         """
-        _name = 'de-' + self.name
         with tf.name_scope(_name):
             return tf.nn.conv2d_transpose(value=x,
                                           filter=self.kernel,
@@ -86,6 +85,7 @@ class Conv2D (Layer):
                                           strides=(1,) +
                                           tuple(self.strides) + (1,),
                                           padding=self.padding,
+                                          name='de-conv'
                                           )
 
     def get_params(self):
