@@ -1,3 +1,7 @@
+# Datasets
+downloaded_data/
+
+### Python GITIGNORE
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

@@ -1,8 +1,7 @@
 import tensorflow as tf
 from cleverhans.utils_mnist import data_mnist
 
-# This could be changed to from dnnmodels.etc import x -> when the dnnmodels
-# package is installed
+# This could be changed to from dnnmodels.etc import x -> if the dnnmodels package is installed
 import sys
 import os.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), os.path.pardir)))

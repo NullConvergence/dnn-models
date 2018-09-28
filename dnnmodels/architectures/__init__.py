@@ -1,1 +1,1 @@
-from alexnet import Alexnet
+from .alexnet import Alexnet
