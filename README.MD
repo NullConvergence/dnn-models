@@ -1,4 +1,3 @@
-[![BCH compliance](https://bettercodehub.com/edge/badge/NullConvergence/dnnmodels?branch=master)](https://bettercodehub.com/)
 
 The library was created in order to extend [Cleverhans](https://github.com/tensorflow/cleverhans) [models](https://github.com/tensorflow/cleverhans/blob/master/cleverhans/model.py).
 The main goal is to ease the design process for new models by introducing the ``` train_graph.py ``` abstraction and other layers such as ``` lrn.py ```.
