@@ -1,3 +1,6 @@
+#### Mainly deprecated since Cleverhans implemented model zoo.
+#### I still use it for experimentation and might roll some new features.
+
 The library was created in order to extend [Cleverhans](https://github.com/tensorflow/cleverhans) [models](https://github.com/tensorflow/cleverhans/blob/master/cleverhans/model.py).
 The main goal is to ease the design process for new models by introducing the ``` train_graph.py ``` abstraction and other layers such as ``` lrn.py ```.
 
